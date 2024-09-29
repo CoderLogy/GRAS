@@ -263,6 +263,7 @@ export function Chat() {
         </ContentWrapper>
       ) : progress === 1 ? (
         <ContentWrapper>
+          <Image src="https://media.giphy.com/media/ZTp15DHfHaaaENKayV/giphy.gif" />
           <Description>
             We are reviewing your assignment... Please wait...
           </Description>
