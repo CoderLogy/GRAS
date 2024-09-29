@@ -1,10 +1,10 @@
-# GRAS - Grading Review Artificial Service
+# GRAS - Grading Review Automation System
 
-Introducing **GRAS**, the Grading Review Artificial Service—an AI-powered tool designed to help students refine their essays with ease. By comparing your writing to a rubric you provide, GRAS identifies key areas for improvement and offers targeted suggestions, ensuring you’re always on the path to better grades. With a unique, nature-themed user interface, the process feels intuitive and refreshing. Whether you're looking to fine-tune your arguments or enhance your writing style, GRAS makes the journey to academic excellence smoother than ever.
+Introducing **GRAS**, the Grading Review Automation System—an AI-powered tool designed to help students refine their essays with ease. By comparing your writing to a rubric you provide, GRAS identifies key areas for improvement and offers targeted suggestions, ensuring you’re always on the path to better grades. With a unique, nature-themed user interface, the process feels intuitive and refreshing. Whether you're looking to fine-tune your arguments or enhance your writing style, GRAS makes the journey to academic excellence smoother than ever.
 
 ---
 
-**GRAS** (Grading Review Artificial Service) is an AI-powered tool designed to assist students in refining their essays by comparing them against custom, user-defined rubrics. By offering detailed, personalized feedback on key areas for improvement, GRAS helps students enhance their writing, all within a calm, nature-themed user interface.
+**GRAS** (Grading Review Automation System) is an AI-powered tool designed to assist students in refining their essays by comparing them against custom, user-defined rubrics. By offering detailed, personalized feedback on key areas for improvement, GRAS helps students enhance their writing, all within a calm, nature-themed user interface.
 
 ## Features
 
