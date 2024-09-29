@@ -53,11 +53,85 @@ const Button = styled.div`
   cursor: pointer;
 `;
 
+const Awesomesauce = styled.img<{
+  $x: number;
+  $y: number;
+  $spin: number;
+}>`
+  width: 150px;
+
+  position: absolute;
+  top: ${(props) => props.$y}px;
+  left: ${(props) => props.$x}px;
+
+  transform: rotate(${(props) => props.$spin}deg);
+`;
+
 export function Landing() {
   const navigate = useNavigate();
 
   return (
     <Container>
+      {/* <Awesomesauce
+        $x={1500}
+        $y={300}
+        $spin={-645}
+        src="https://cdn.discordapp.com/attachments/1290017340188004362/1290057625047928882/output-onlinepngtools.png?ex=66fb1349&is=66f9c1c9&hm=b4954ce065287585c2f33230fcabe18d5cb2dbfeff01f6523108fbfb6345d024&"
+      />
+      <Awesomesauce
+        $x={100}
+        $y={300}
+        $spin={-545}
+        src="https://cdn.discordapp.com/attachments/1290017340188004362/1290057625047928882/output-onlinepngtools.png?ex=66fb1349&is=66f9c1c9&hm=b4954ce065287585c2f33230fcabe18d5cb2dbfeff01f6523108fbfb6345d024&"
+      />
+      <Awesomesauce
+        $x={500}
+        $y={300}
+        $spin={-245}
+        src="https://cdn.discordapp.com/attachments/1290017340188004362/1290057625047928882/output-onlinepngtools.png?ex=66fb1349&is=66f9c1c9&hm=b4954ce065287585c2f33230fcabe18d5cb2dbfeff01f6523108fbfb6345d024&"
+      />
+      <Awesomesauce
+        $x={1500}
+        $y={400}
+        $spin={-425}
+        src="https://cdn.discordapp.com/attachments/1290017340188004362/1290057625047928882/output-onlinepngtools.png?ex=66fb1349&is=66f9c1c9&hm=b4954ce065287585c2f33230fcabe18d5cb2dbfeff01f6523108fbfb6345d024&"
+      />
+      <Awesomesauce
+        $x={1500}
+        $y={500}
+        $spin={-145}
+        src="https://cdn.discordapp.com/attachments/1290017340188004362/1290057625047928882/output-onlinepngtools.png?ex=66fb1349&is=66f9c1c9&hm=b4954ce065287585c2f33230fcabe18d5cb2dbfeff01f6523108fbfb6345d024&"
+      />
+      <Awesomesauce
+        $x={1100}
+        $y={1500}
+        $spin={-415}
+        src="https://cdn.discordapp.com/attachments/1290017340188004362/1290057625047928882/output-onlinepngtools.png?ex=66fb1349&is=66f9c1c9&hm=b4954ce065287585c2f33230fcabe18d5cb2dbfeff01f6523108fbfb6345d024&"
+      />{' '}
+      <Awesomesauce
+        $x={10}
+        $y={400}
+        $spin={-15}
+        src="https://cdn.discordapp.com/attachments/1290017340188004362/1290057625047928882/output-onlinepngtools.png?ex=66fb1349&is=66f9c1c9&hm=b4954ce065287585c2f33230fcabe18d5cb2dbfeff01f6523108fbfb6345d024&"
+      />
+      <Awesomesauce
+        $x={1500}
+        $y={300}
+        $spin={-45}
+        src="https://cdn.discordapp.com/attachments/1290017340188004362/1290057625047928882/output-onlinepngtools.png?ex=66fb1349&is=66f9c1c9&hm=b4954ce065287585c2f33230fcabe18d5cb2dbfeff01f6523108fbfb6345d024&"
+      />
+      <Awesomesauce
+        $x={1500}
+        $y={300}
+        $spin={-45}
+        src="https://cdn.discordapp.com/attachments/1290017340188004362/1290057625047928882/output-onlinepngtools.png?ex=66fb1349&is=66f9c1c9&hm=b4954ce065287585c2f33230fcabe18d5cb2dbfeff01f6523108fbfb6345d024&"
+      />
+      <Awesomesauce
+        $x={1500}
+        $y={300}
+        $spin={-45}
+        src="https://cdn.discordapp.com/attachments/1290017340188004362/1290057625047928882/output-onlinepngtools.png?ex=66fb1349&is=66f9c1c9&hm=b4954ce065287585c2f33230fcabe18d5cb2dbfeff01f6523108fbfb6345d024&"
+      /> */}
       <TextWrapper>
         <Heading>Introducing GRAS...</Heading>
         <Description>

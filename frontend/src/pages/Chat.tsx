@@ -155,48 +155,156 @@ const Image = styled.img`
   border-radius: 8px;
 `;
 
+const ScoreWrapper = styled.div`
+  width: 200px;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  background-color: #2f2f2f;
+
+  border-radius: 8px;
+`;
+
+const ScoreHeading = styled.p`
+  font-size: 18px;
+
+  text-align: center;
+
+  color: #b4b4b4;
+`;
+
+const Score = styled.p`
+  font-size: 48px;
+
+  text-align: center;
+
+  color: #fff;
+`;
+
+const Description = styled.p`
+  width: 624px;
+
+  font-size: 18px;
+  text-align: center;
+
+  color: #b4b4b4;
+
+  white-space: pre-line;
+`;
+
 export function Chat() {
   const [image, setImage] = useState<string>();
   const [text, setText] = useState<string>();
+  const [progress, setProgress] = useState<number>(0);
 
   return (
     <Container>
-      <ContentWrapper>
-        {image ? (
-          <ImageWrapper>
-            <Image src={image} />
-          </ImageWrapper>
-        ) : (
-          <ImageWrapper>
-            <Sample $type={0} />
-            <Sample $type={1}>
-              <ImageInput
-                type="file"
-                accept=".png,.jpg"
-                onChange={(e) => {
-                  if (e.target.files && e.target.files[0]) {
-                    setImage(URL.createObjectURL(e.target.files[0]));
-                  }
-                }}
-              />
-              <SampleButton>
-                <PlusSVG />
-              </SampleButton>
-              <SampleText>Click to add the rubric</SampleText>
-            </Sample>
-            <Sample $type={2} />
-          </ImageWrapper>
-        )}
-        <InputWrapper>
-          <Input
-            placeholder="Paste your essay here..."
-            onChange={(e) => setText(e.target.value)}
-          />
-          <SubmitButton>
-            <UploadSVG />
-          </SubmitButton>
-        </InputWrapper>
-      </ContentWrapper>
+      {progress === 0 ? (
+        <ContentWrapper>
+          {image ? (
+            <ImageWrapper>
+              <Image src={image} />
+            </ImageWrapper>
+          ) : (
+            <ImageWrapper>
+              <Sample $type={0} />
+              <Sample $type={1}>
+                <ImageInput
+                  type="file"
+                  accept=".png,.jpg"
+                  onChange={(e) => {
+                    if (e.target.files && e.target.files[0]) {
+                      setImage(URL.createObjectURL(e.target.files[0]));
+                    }
+                  }}
+                />
+                <SampleButton>
+                  <PlusSVG />
+                </SampleButton>
+                <SampleText>Click to add the rubric</SampleText>
+              </Sample>
+              <Sample $type={2} />
+            </ImageWrapper>
+          )}
+          <InputWrapper>
+            <Input
+              placeholder="Paste your essay here..."
+              onChange={(e) => {
+                setText(e.target.value);
+              }}
+            />
+            <SubmitButton
+              onClick={() => {
+                if (image && text) {
+                  setProgress(1);
+                }
+              }}
+            >
+              <UploadSVG />
+            </SubmitButton>
+          </InputWrapper>
+        </ContentWrapper>
+      ) : (
+        <ContentWrapper>
+          <ScoreWrapper>
+            <ScoreHeading>Estimated Score</ScoreHeading>
+            <Score>0/100</Score>
+          </ScoreWrapper>
+          <Description>
+            Here’s a diss-style rap lyric inspired by Drake’s signature style:
+            {'\n'}
+            {'\n'}
+            ---
+            {'\n'}
+            {'\n'}
+            **Verse 1:** Yeah, they talkin' like they runnin’ things, but I
+            don’t hear 'em Man, they braggin’ 'bout the game, but I ain’t even
+            near 'em They tried to take my style, flip it, claim it like it’s
+            theirs But I been movin’ like a ghost, I ain’t even see you there
+            {'\n'}
+            {'\n'}
+            You tweetin’ out my name, but I ain’t one to play these games I’m
+            stackin’ up the wins, man, I’m way above the fame I gave you boys
+            the blueprint, but you fumbled out the gate Now you beggin’ for
+            attention, but the love already late
+            {'\n'}
+            {'\n'}
+            **Chorus:** Came up from the bottom, now I’m standin’ at the peak
+            You ain’t in my league, don’t even try to speak I’m sittin' on the
+            throne, but they still want the crown But I don’t hear a sound when
+            the clowns come around
+            {'\n'}
+            {'\n'}
+            **Verse 2:** I heard you droppin' hints like you think I’d take
+            offense But I been on my money grind, not worried 'bout the rest You
+            out here takin’ shots, but they never seem to hit I’m laughin' from
+            the top while you still throwin’ fits
+            {'\n'}
+            {'\n'}
+            They sayin’ I went soft, but my bank account’s aggressive Y’all
+            still petty flexin', my moves been impressive You can’t check me,
+            I’m a boss, call it chess, not checkers You runnin’ out of gas, I’m
+            movin’ like a Tesla
+            {'\n'}
+            {'\n'}
+            **Chorus:** Came up from the bottom, now I’m standin’ at the peak
+            You ain’t in my league, don’t even try to speak I’m sittin' on the
+            throne, but they still want the crown But I don’t hear a sound when
+            the clowns come around
+            {'\n'}
+            {'\n'}
+            ---
+            {'\n'}
+            {'\n'}
+            This flows with Drake’s mix of confidence, clever wordplay, and
+            subtle jabs.
+          </Description>
+        </ContentWrapper>
+      )}
     </Container>
   );
 }
