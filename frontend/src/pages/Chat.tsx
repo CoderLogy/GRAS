@@ -32,6 +32,7 @@ const ImageWrapper = styled.div`
   gap: 20px;
 `;
 
+//file preview
 const Sample = styled.div<{
   $type: number;
 }>`
